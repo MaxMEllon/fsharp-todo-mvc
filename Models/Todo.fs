@@ -13,7 +13,15 @@ type TodoModel(id: string, txt: string, status: bool) =
   member this.UpdateText(txt: string) =
     this.Text = txt
 
-
-type TodoCollection(arr: (string * string * bool) list) =
-  member this.Todos = List.map TodoModel arr
-    
+type TodoCollection() =
+  static member NewTodo(item: (string * string * bool)) =
+    let todo = TodoModel(item)
+    // do
+      // todo: create query
+    todo
+  
+  static member All() =
+    // do
+      // todo: select query
+    // todo: dummy data
+    List.map TodoModel [("01", "sample", false); ("02", "sample", true)] 
